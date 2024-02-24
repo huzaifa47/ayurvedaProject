@@ -9,7 +9,7 @@ header {
     display: flex;
     align-items: center;
     position: fixed;
-    background-color: antiquewhite;
+    background-image:linear-gradient(to right,rgb(198, 255, 205), rgb(157, 255, 161));
     top: 0;
     left:0;
     z-index: 4;
@@ -58,6 +58,7 @@ nav>ul>li:hover{
 #big{
     margin-top: 5%;
     width: 100%;
+    max-height: 800px;
     display: block;
     opacity: 0.5;
     z-index: 1;
@@ -88,7 +89,7 @@ nav>ul>li:hover{
 }
 
 /* The typewriter cursor effect */
-@keyframes blink-caret {
+ @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: orange; }
-}
+} 
