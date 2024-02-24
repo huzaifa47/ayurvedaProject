@@ -73,6 +73,7 @@ nav>ul>li:hover{
 }
 
 #textInimg {
+    z-index: 2;
     position: absolute;
     white-space: nowrap;
     overflow: hidden;
@@ -93,3 +94,56 @@ nav>ul>li:hover{
     from, to { border-color: transparent }
     50% { border-color: orange; }
 } 
+.shops{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+}
+.shop1{
+    margin : 5%;
+    padding:5%;
+    border: 2px solid black;
+    border-radius: 25px;
+    background-color: beige;
+
+}
+.shop2{
+    margin : 5%;
+    padding:5%;
+    border: 2px solid black;
+    border-radius: 25px;
+    background-color: beige;
+
+}
+a:hover{
+    color: #ff0000;
+    transform: scale(1.1,1.1);
+    transition: transform 1s;
+}
+.shop1:hover{
+    background-color: bisque;
+}
+.shop2:hover{
+    background-color: bisque;
+    
+}
+.socialMedia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#lo{
+
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 7%;
+}
+footer{
+    background-color: saddlebrown;
+    color:aqua;
+    padding: 3%;
+    text-align: center;
+}
