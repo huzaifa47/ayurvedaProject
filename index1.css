@@ -9,7 +9,7 @@ header {
     display: flex;
     align-items: center;
     position: fixed;
-    background-image:linear-gradient(to right,rgb(198, 255, 205), rgb(157, 255, 161));
+    background-image:linear-gradient(to right,rgb(198, 255, 205), rgb(255, 165, 87));
     top: 0;
     left:0;
     z-index: 4;
@@ -142,8 +142,11 @@ a:hover{
     margin-bottom: 7%;
 }
 footer{
+    width: 100%;
     background-color: saddlebrown;
     color:aqua;
     padding: 3%;
     text-align: center;
+    position: relative;
+    bottom: 0;
 }
