@@ -21,20 +21,29 @@
            </nav>
     
     </header>
+    <img src="back.jpg" id="big">
+    <div class="main">
    <H1 align="center">OUR PRODUCTS</H1> 
     <div class="container">
       <div class="rectangle" id="skin">
-        <h2>Skin</h2>
+        <h2 >Skin Care</h2>
+        <img src="skin.jpg"  class="imgCon">
+      
       </div>
       <div class="rectangle" id="hair">
-        <h2>Hair</h2>
+        <h2>Hair Care</h2>
+        <img src="hair.jpg"  class="imgCon">
       </div>
       <div class="rectangle" id="raw">
         <h2>Raw Powders</h2>
+        <img src="powder.jpg"  class="imgCon">
       </div>
       <div class="rectangle" id="scents">
-        <h2>Scents</h2>
+        <img src="scent.jpg"  class="imgCon">
+        <h2>Scents and Sticks</h2>
+       
       </div>
+    </div>
     </div>
 
     <footer>
@@ -47,5 +56,55 @@
       &copy; 2023-2024 Abbas Bhai Kaderbhai vaid<br>
       All Rights Reserved
     </footer>
+    <script>
+      // JavaScript code to apply blur effect
+      document.getElementById('skin').addEventListener('mouseover', function() {
+          document.getElementById('hair').style.filter = 'blur(5px)';
+          document.getElementById('raw').style.filter = 'blur(5px)';
+          document.getElementById('scents').style.filter = 'blur(5px)';
+      });
+      
+      document.getElementById('hair').addEventListener('mouseover', function() {
+          document.getElementById('skin').style.filter = 'blur(5px)';
+          document.getElementById('raw').style.filter = 'blur(5px)';
+          document.getElementById('scents').style.filter = 'blur(5px)';
+      });
+      
+      document.getElementById('raw').addEventListener('mouseover', function() {
+          document.getElementById('hair').style.filter = 'blur(5px)';
+          document.getElementById('skin').style.filter = 'blur(5px)';
+          document.getElementById('scents').style.filter = 'blur(5px)';
+      });
+      
+      document.getElementById('scents').addEventListener('mouseover', function() {
+          document.getElementById('hair').style.filter = 'blur(5px)';
+          document.getElementById('skin').style.filter = 'blur(5px)';
+          document.getElementById('raw').style.filter = 'blur(5px)';
+      });
+      document.getElementById('skin').addEventListener('mouseout', function() {
+    document.getElementById('hair').style.filter = 'none';
+    document.getElementById('raw').style.filter = 'none';
+    document.getElementById('scents').style.filter = 'none';
+});
+
+document.getElementById('hair').addEventListener('mouseout', function() {
+    document.getElementById('skin').style.filter = 'none';
+    document.getElementById('raw').style.filter = 'none';
+    document.getElementById('scents').style.filter = 'none';
+});
+
+document.getElementById('raw').addEventListener('mouseout', function() {
+    document.getElementById('hair').style.filter = 'none';
+    document.getElementById('skin').style.filter = 'none';
+    document.getElementById('scents').style.filter = 'none';
+});
+
+document.getElementById('scents').addEventListener('mouseout', function() {
+    document.getElementById('hair').style.filter = 'none';
+    document.getElementById('skin').style.filter = 'none';
+    document.getElementById('raw').style.filter = 'none';
+});
+      </script>
+      
 </body>
 </html>
