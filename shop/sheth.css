@@ -1,17 +1,29 @@
-body{
-    background-color: rgb(157, 255, 161);
+* {
+    box-sizing: border-box;
+    margin: 0px;
+
+}
+
+@font-face {
+    font-family: myface;
+    src: url(AL_Nevrada_Personal_Use_Only.otf);
+}
+
+body {
+
     margin: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 header {
     width: 100%;
-    padding: 4px; 
+    padding: 4px;
     display: flex;
     align-items: center;
-    position: fixed;
-    background-image:linear-gradient(to right,rgb(198, 255, 205), rgb(255, 165, 87));
+    position: relative;
+    background-image: linear-gradient(to right, rgb(198, 255, 205), rgb(255, 165, 87));
     top: 0;
-    left:0;
+    left: 0;
     z-index: 4;
 }
 
@@ -27,53 +39,231 @@ header {
 #nameShop:hover {
     color: #ff0000;
 }
-nav{
+
+nav {
     margin-left: auto;
     margin-right: 1%;
 
 }
 
 ul {
-  
+
     display: flex;
     list-style: none;
-
-
 }
-ul>li{
+
+ul>li {
     margin: 0 10px;
     font-size: 0.8em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 7px;
 
 }
-nav>ul>li:hover{
+
+nav>ul>li:hover {
     background-color: coral;
 
     cursor: pointer;
     border-radius: 25px;
-    transform: scale(1.5,1.5);
+    transform: scale(1.5, 1.5);
     transition: transform 1s;
 }
-.socialMedia{
+
+.socialMedia {
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
 
-#lo{
+#lo {
 
     margin-right: 5%;
     margin-left: 5%;
     margin-bottom: 7%;
 }
-footer{
+
+.part {
+    margin-bottom: 0px;
+}
+
+footer {
     width: 100%;
     background-color: saddlebrown;
-    color:aqua;
+    color: aqua;
     padding: 3%;
     text-align: center;
-    position: absolute;
+    position: relative;
     bottom: 0;
+    margin-top: 0px;
+}
+
+.part {
+    display: flex;
+
+}
+
+.loc {
+    margin: 30px 40px 0px 60px;
+}
+
+.address {
+    position: relative;
+    top: 180px;
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 30px;
+    font-weight: bolder;
+
+}
+
+.review {
+    width: 90%;
+    height: 80px;
+
+    position: relative;
+    left: 60px;
+    margin-bottom: 0px;
+}
+
+.loc h1 {
+    padding-left: 50px;
+    fill-opacity: 0.5;
+    color: white;
+    background-color: rgba(70, 70, 70, 0.5);
+    display: inline-block;
+    padding: 10px;
+}
+
+#one {
+    width: 600px;
+    height: 40px;
+    position: relative;
+    left: 70px;
+    top: 30px;
+    font-size: 30px;
+    color: brown;
+    padding-top: 20px;
+    font-weight: bolder;
+}
+
+.review2 {
+    width: 1135px;
+    height: 900px;
+
+    position: relative;
+    left: 60px;
+    margin-bottom: 0px;
+    display: grid;
+    grid-template-columns: repeat(12, 120px);
+    grid-template-rows: repeat(6, 100px);
+    column-gap: 6px;
+    row-gap: 2px;
+}
+
+.one {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    width: 450px;
+    height: 250px;
+}
+
+.two {
+    position: relative;
+    top: 300px;
+    right: 105px;
+    width: 450px;
+    height: 250px;
+    margin-left: 0px;
+
+}
+
+.three {
+    position: relative;
+    top: 580px;
+    right: 230px;
+    width: 450px;
+    height: 250px;
+}
+
+.fourth1 {
+    position: relative;
+    top: 70px;
+    right: 0px;
+    left: 120px;
+    width: 300px;
+    height: 150px;
+}
+
+.fifth {
+    position: relative;
+    top: 70px;
+    right: 0px;
+    left: 315px;
+    width: 300px;
+    height: 150px;
+}
+
+.sixth {
+    position: absolute;
+    top: 250px;
+    right: 20px;
+    left: 500px;
+    width: 300px;
+    height: 150px;
+}
+
+.seven {
+    position: absolute;
+    top: 250px;
+    right: 20px;
+    left: 820px;
+    width: 300px;
+    height: 150px;
+}
+
+.eight {
+    position: absolute;
+    top: 430px;
+    right: 20px;
+    left: 500px;
+    width: 300px;
+    height: 150px;
+}
+
+.nineth {
+    position: absolute;
+    top: 430px;
+    right: 20px;
+    left: 820px;
+    width: 300px;
+    height: 150px;
+}
+
+.ten {
+    position: absolute;
+    top: 610px;
+    right: 20px;
+    left: 500px;
+    width: 300px;
+    height: 150px;
+}
+
+.eleven {
+    position: absolute;
+    top: 610px;
+    right: 20px;
+    left: 820px;
+    width: 300px;
+    height: 150px;
+}
+
+main {
+    background: url(work.avif);
+    background-size: contain;
+    margin-bottom: 0px;
+    background-repeat: round;
+
+
 }
