@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Login Page in HTML with CSS Code Example</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+	<header>
+		<img src="ak.png" width="75em">
+		<h3 id="nameShop">Abbas Bhai Kaderbhai vaid</h3>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="services.html">Services</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="box-form">
+		<div class="left">
+			<div class="overlay">
+				<h1>Rejuvenate with Mother Earth's Herbs</h1>
+				<p>"Unlock the natural healing power of Ayurvedic medicines for holistic health and vitality."</p>
+				<span>
+					<p>Login with social media</p>
+					<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Login with Twitter</a>
+				</span>
+			</div>
+		</div>
+
+
+		<div class="right">
+			<h5>Registeration<br> <span id="jj">Form</span></h5>
+
+			<div class="inputs">
+				<input type="text" placeholder="First Name" required>
+				<br>
+				<input type="text" placeholder="Last Name" required>
+				<br>
+				<input type="password" placeholder="password" required>
+				<br>
+				<input type="email" placeholder="abc@gmail.com" required>
+				<br>
+			</div>
+			<br><br>
+			<br>
+			<button>Login</button>
+		</div>
+
+	</div>
+	<footer>
+		<h2 align="center">Connect With Us</h2>
+		<div class="socialMedia">
+
+			<div id="lo"><a href="https://www.facebook.com/voraabbasbhai.kaderbhai/" target="_blank"><img
+						src="facebook.png" width="50px"></a></div>
+			<div id="lo"><a
+					href="https://www.justdial.com/Rajkot/Vora-M-Abbasbhai-Kadarbhai-Vaid-Opp-Crystal-Mall-Rajkot-City/0281PX281-X281-120725082405-I2E5_BZDET/"
+					target="_blank"><img src="jd.png" width="50px"></a></div>
+			<div id="lo"><a href="https://wa.me/919924337567" target="_blank"><img src="wp.jpg" width="50px"></a>
+			</div>
+		</div>
+		&copy; 2023-2024 Abbas Bhai Kaderbhai vaid<br>
+		All Rights Reserved
+	</footer>
+	<script>
+		document.getElementById('loginButton').addEventListener('click', function (event) {
+			event.preventDefault();
+
+			var firstName = document.getElementById('firstNameInput').value;
+			var lastName = document.getElementById('lastNameInput').value;
+			var password = document.getElementById('passwordInput').value;
+			var email = document.getElementById('emailInput').value;
+
+			var nameRegex = /^[a-zA-Z]+$/; // Only letters allowed for names
+			var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/; // Password with at least one digit, one lowercase, one uppercase, and 6-20 characters long
+			var emailRegex = /^\S+@\S+\.\S+$/; // Basic email pattern
+
+			if (!firstName.match(nameRegex)) {
+				alert('First Name must contain only letters.');
+				return;
+			}
+
+			if (!lastName.match(nameRegex)) {
+				alert('Last Name must contain only letters.');
+				return;
+			}
+
+			if (!password.match(passwordRegex)) {
+				alert('Password must be between 6 to 20 characters long and contain at least one digit, one lowercase letter, and one uppercase letter.');
+				return;
+			}
+
+			if (!email.match(emailRegex)) {
+				alert('Please enter a valid email address.');
+				return;
+			}
+
+			alert('Registration successful!');
+		});
+	</script>
+
+</body>
+
+</html>

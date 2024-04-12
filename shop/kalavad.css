@@ -114,14 +114,9 @@ footer {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 30px;
     font-weight: bolder;
-    background-color: burlywood;
-    border-radius: 25px;
-    padding: 25px;
-    opacity: 75%;
-    height: 250px;
-   
 
 }
+
 .review {
     width: 90%;
     height: 80px;

@@ -1,0 +1,140 @@
+body {
+    background-color: rgb(157, 255, 161);
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#big {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 800px;
+    opacity: 0.7;
+    z-index: -1;
+    height: 100%;
+}
+
+header {
+    width: 100%;
+    padding: 4px; 
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-image: linear-gradient(to right, rgb(198, 255, 205), rgb(255, 165, 87));
+    top: 0;
+    left: 0;
+    z-index: 4;
+}
+
+#nameShop {
+    margin-left: 2%;
+    font-size: 1.5em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#nameShop:hover {
+    color: #ff0000;
+}
+
+nav {
+    margin-left: auto;
+    margin-right: 1%;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+ul > li {
+    margin: 0 10px;
+    font-size: 0.8em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 7px;
+}
+
+nav > ul > li:hover {
+    background-color: coral;
+    cursor: pointer;
+    border-radius: 25px;
+    transform: scale(1.5, 1.5);
+    transition: transform 1s;
+}
+
+.socialMedia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lo {
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 7%;
+}
+
+footer {
+    width: 100%;
+    background-color: saddlebrown;
+    color: aqua;
+    padding: 3%;
+    text-align: center;
+    position: relative;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    z-index: 2; /* Ensure the container is above the background image */
+}
+
+.rectangle {
+    width: 100%;
+    border: 2px solid brown;
+    padding: 4%;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.rectangle:hover {
+    cursor: pointer;
+    transform: scale(1.01, 1.01);
+    transition: transform 1s;
+}
+
+#skin:hover {
+    background-color: lavender;
+}
+
+#hair:hover {
+    background-color: burlywood;
+}
+
+#raw:hover {
+    background-color: sandybrown;
+}
+
+#scents:hover {
+    background-color: lightcoral;
+}
+
+#skin {
+    position: relative;
+}
+
+.imgCon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto; /* Adjust the width as needed */
+    height: 100%;
+}

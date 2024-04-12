@@ -1,0 +1,222 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+
+}
+
+@font-face {
+    font-family: myface;
+    src: url(AL_Nevrada_Personal_Use_Only.otf);
+}
+
+body {
+
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {
+    width: 100%;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-image: linear-gradient(to right, rgb(198, 255, 205), rgb(255, 165, 87));
+    top: 0;
+    left: 0;
+    z-index: 4;
+}
+
+#nameShop {
+    margin-left: 2%;
+
+    font-size: 1.5em;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+#nameShop:hover {
+    color: #ff0000;
+}
+
+nav {
+    margin-left: auto;
+    margin-right: 1%;
+
+}
+
+ul {
+
+    display: flex;
+    list-style: none;
+}
+
+ul>li {
+    margin: 0 10px;
+    font-size: 0.8em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 7px;
+
+}
+
+nav>ul>li:hover {
+    background-color: coral;
+
+    cursor: pointer;
+    border-radius: 25px;
+    transform: scale(1.5, 1.5);
+    transition: transform 1s;
+}
+
+.socialMedia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#lo {
+
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 7%;
+}
+
+.part {
+    margin-bottom: 0px;
+}
+
+footer {
+    width: 100%;
+    background-color: saddlebrown;
+    color: aqua;
+    padding: 3%;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    margin-top: 0px;
+}
+
+.part {
+    display: flex;
+
+}
+
+.loc {
+    margin: 30px 40px 0px 60px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("1000_F_650588604_qakMPzvdCYh9zuV5Xq9UXcNX3CXmqxlF.jpg");
+    background-size: cover;
+    background-position: right;
+}
+
+.wrapper {
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    padding: 30px 40px;
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.wrapper .input-box {
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+    color: #fff;
+
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.wrapper .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0px 15px;
+}
+
+.remember-forgot label input {
+    accent-color: #fff;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.wrapper .register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0px 15px;
+}
+
+.register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a::hover {
+    text-decoration: underline;
+}
