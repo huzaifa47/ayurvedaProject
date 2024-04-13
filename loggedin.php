@@ -1,36 +1,33 @@
 <?php
-// Start session
+
 session_start();
 
-// Check if the user is logged in
-// Get the username from the session data if it exists
+
 if (isset($_SESSION['username'])) {
-    $username = $_SESSION['username'];
+    $username1 = $_SESSION['username'];
 } else {
-    // Handle the case where the username is not set in the session
-    // Redirect the user to the login page or display an error message
+
     header("Location: admin_login.html");
     exit();
 }
 
-// Set a session cookie with a specific lifetime to check if the browser is closed
-// The session cookie will be deleted when the browser is closed
+
 setcookie('session_check', 'session_active', time() + 60, '/'); // Adjust the lifetime as needed (e.g., 60 seconds)
 
-// Get the username from the session data
-$username = $_SESSION['username'];
 
-// Include the database connection file
+$username1 = $_SESSION['username'];
+
+
 include 'connect.php';
 
-// Handle form submission for inserting new data
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $productname = $_POST['productname'];
     $productLoc = $_POST['productLoc'];
     $date = $_POST['date'];
     $stock = $_POST['stock'];
 
-    // SQL query to insert new data into the productstock table
+ 
     $sql = "INSERT INTO productstock (productname, productLoc, date, stock) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('sssd', $productname, $productLoc, $date, $stock);
@@ -80,7 +77,7 @@ $result = $conn->query($sql);
     </header>
 
     <div style="height: 100px; ;"></div>
-    <h1>Welcome, <?php echo htmlspecialchars($username); ?>!</h1>
+    <h1>Welcome, <?php echo htmlspecialchars($username1); ?>!</h1>
 
     <!-- Insert new data form -->
     <button onclick="showForm()">Insert New</button>
@@ -150,6 +147,12 @@ $result = $conn->query($sql);
     </footer>
 
     <script>
+         window.onload = function() {
+            if (document.cookie.indexOf('session_check') === -1) {
+                // Redirect the user to the logout page if the session cookie doesn't exist
+                window.location.href = 'logout.php';
+            }
+        };
         function showForm() {
             var form = document.getElementById("insertForm");
             form.style.display = "block";
