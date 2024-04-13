@@ -13,13 +13,19 @@
 
     <nav>
       <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="product/product_main.html">Product</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="logout.php">Logout</a></li>
       </ul>
     </nav>
   </header>
+  <div style="height: 10%;">
+
+  </div>
+  <h1>Welcome, <?php echo htmlspecialchars($username); ?>!</h1>
+  <!-- Add your logged-in content here -->
+
+  <!-- Logout button -->
+  <form action="logout.php" method="post">
+      <button type="submit">Logout</button>
   <footer>
     <br />
     <br />
