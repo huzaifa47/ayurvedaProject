@@ -157,16 +157,16 @@ button{
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form>
+    <form action="admin_verify.php" method="post">
         <h3>Login Here</h3>
 
         <label for="username">Username</label>
-        <input type="text" placeholder="Email or Phone" id="username">
+        <input type="text" placeholder="Email or Phone" id="username" name="username">
 
         <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password">
+        <input type="password" placeholder="Password" id="password" name="password">
 
-        <button>Log In</button>
+        <button type="submit">Log In</button>
         <div class="social">
           <div class="go"><i class="fab fa-google"></i>  Google</div>
           <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
@@ -187,7 +187,7 @@ button{
         &copy; 2023-2024 Abbas Bhai Kaderbhai vaid<br>
         All Rights Reserved
       </footer>
-    <script>
+    <!-- <script>
         window.onload = function() {
             var form = document.querySelector('form');
             var email = document.querySelector('#username');
@@ -214,6 +214,6 @@ button{
                 alert('Login successful.');
             });
         }
-        </script>
+        </script> -->
 </body>
 </html>

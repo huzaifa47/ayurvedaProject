@@ -39,24 +39,27 @@
 			</div>
 		</div>
 
-
+		
 		<div class="right">
 			<h5>Registeration<br> <span id="jj">Form</span></h5>
-
+             
 			<div class="inputs">
-				<input type="text" placeholder="First Name" required>
+				<form action="register_user.php" method="post">
+				<input type="text" placeholder="First Name" name="firstName" required>
 				<br>
-				<input type="text" placeholder="Last Name" required>
+				<input type="text" placeholder="Username" name="user"" required>
 				<br>
-				<input type="password" placeholder="password" required>
+				<input type="password" placeholder="password" name="password" required>
 				<br>
-				<input type="email" placeholder="abc@gmail.com" required>
+				<input type="email" placeholder="abc@gmail.com" name="email" required>
 				<br>
 			</div>
+	
 			<br><br>
 			<br>
-			<button>Login</button>
+			<button type="submit">Login</button>
 		</div>
+		</form>
 
 	</div>
 	<footer>
