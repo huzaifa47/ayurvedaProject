@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $date = $_POST['date'];
     $stock = $_POST['stock'];
 
- 
+
     $sql = "INSERT INTO productstock (productname, productLoc, date, stock) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('sssd', $productname, $productLoc, $date, $stock);
@@ -44,6 +44,7 @@ $result = $conn->query($sql);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,17 +54,21 @@ $result = $conn->query($sql);
             width: 100%;
             border-collapse: collapse;
         }
-        th, td {
+
+        th,
+        td {
             border: 1px solid #dddddd;
             text-align: left;
             padding: 8px;
         }
+
         th {
             background-color: #f2f2f2;
         }
     </style>
     <link rel="stylesheet" type="text/css" href="admin_login.css">
 </head>
+
 <body bgcolor="#eeff90">
     <header>
         <img src="img/ak.png" width="75em" />
@@ -71,7 +76,10 @@ $result = $conn->query($sql);
 
         <nav>
             <ul>
+                <li><a href="admin_query.php">All Queries</a></li>
                 <li><a href="logout.php">Log Out</a></li>
+
+
             </ul>
         </nav>
     </header>
@@ -81,7 +89,8 @@ $result = $conn->query($sql);
 
     <!-- Insert new data form -->
     <button onclick="showForm()">Insert New</button>
-    <form id="insertForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" style="display: none;">
+    <form id="insertForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"
+        style="display: none;">
         <label for="productname">Product Name:</label>
         <input type="text" id="productname" name="productname" required><br><br>
         <label for="productLoc">Product Location:</label>
@@ -130,13 +139,15 @@ $result = $conn->query($sql);
         <br />
         <br />
 
-       
+
         <div class="socialMedia">
             <div id="lo">
-                <a href="https://www.facebook.com/voraabbasbhai.kaderbhai/" target="_blank"><img src="img/facebook.png" width="50px" /></a>
+                <a href="https://www.facebook.com/voraabbasbhai.kaderbhai/" target="_blank"><img src="img/facebook.png"
+                        width="50px" /></a>
             </div>
             <div id="lo">
-                <a href="https://www.justdial.com/Rajkot/Vora-M-Abbasbhai-Kadarbhai-Vaid-Opp-Crystal-Mall-Rajkot-City/0281PX281-X281-120725082405-I2E5_BZDET/" target="_blank"><img src="img/jd.png" width="50px" /></a>
+                <a href="https://www.justdial.com/Rajkot/Vora-M-Abbasbhai-Kadarbhai-Vaid-Opp-Crystal-Mall-Rajkot-City/0281PX281-X281-120725082405-I2E5_BZDET/"
+                    target="_blank"><img src="img/jd.png" width="50px" /></a>
             </div>
             <div id="lo">
                 <a href="https://wa.me/919924337567" target="_blank"><img src="img/wp.jpg" width="50px" /></a>
@@ -147,7 +158,7 @@ $result = $conn->query($sql);
     </footer>
 
     <script>
-         window.onload = function() {
+        window.onload = function () {
             if (document.cookie.indexOf('session_check') === -1) {
                 // Redirect the user to the logout page if the session cookie doesn't exist
                 window.location.href = 'logout.php';
@@ -159,6 +170,7 @@ $result = $conn->query($sql);
         }
     </script>
 </body>
+
 </html>
 
 <?php

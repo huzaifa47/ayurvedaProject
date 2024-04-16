@@ -18,8 +18,7 @@ $query = $_POST['query'];
 $query = "INSERT INTO querycus (firstName, lastName, email, phoneNum, country, query) VALUES ('$firstName', '$lastName', '$email', '$phone', '$country', '$query')";
 
 if (mysqli_query($conn, $query)) {
-    echo "<script>confirm('Query submitted successfully!');</script>";
-    header("Location: customer.html");
+    header("Location: loggedin_user.php");
 } else {
     echo "Error: " . $query . "<br>" . mysqli_error($conn);
 }
