@@ -16,5 +16,3 @@ setcookie('session_check', 'session_active', time() + 60, '/'); // Adjust the li
 
 
 $username1 = $_SESSION['user'];
-
-echo "Welcome $username1";

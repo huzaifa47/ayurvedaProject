@@ -1,0 +1,305 @@
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        header {
+            width: 100vw;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            background-image: linear-gradient(to right, rgb(198, 255, 205), rgb(255, 165, 87));
+            top: 0;
+            left: 0;
+            z-index: 4;
+        }
+
+        #nameShop {
+            margin-left: 2%;
+
+            font-size: 1.5em;
+
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+        }
+
+        #nameShop:hover {
+            color: #ff0000;
+        }
+
+        nav {
+            margin-left: auto;
+            margin-right: 1%;
+
+        }
+
+        ul {
+
+            display: flex;
+            list-style: none;
+
+
+        }
+
+        ul>li {
+            margin: 0 10px;
+            font-size: 0.8em;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding: 7px;
+
+        }
+
+        nav>ul>li:hover {
+            background-color: coral;
+
+            cursor: pointer;
+            border-radius: 25px;
+            transform: scale(1.5, 1.5);
+            transition: transform 1s;
+        }
+
+        #big {
+            margin-top: 5%;
+            width: 100vw;
+            max-height: 800px;
+            /* display: block; */
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+        .welcomeText {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            font-size: 400%;
+        }
+
+        #textInimg {
+            z-index: 2;
+            position: absolute;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* The typing effect */
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: orange;
+            }
+        }
+
+        .shops {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .shop1 {
+            margin: 5%;
+            padding: 5%;
+            border: 2px solid black;
+            border-radius: 25px;
+            background-color: beige;
+
+        }
+
+        .shop2 {
+            margin: 5%;
+            padding: 5%;
+            border: 2px solid black;
+            border-radius: 25px;
+            background-color: beige;
+
+        }
+
+        a:hover {
+            color: #ff0000;
+            transform: scale(1.1, 1.1);
+            transition: transform 1s;
+        }
+
+        .shop1:hover {
+            background-color: bisque;
+        }
+
+        .shop2:hover {
+            background-color: bisque;
+
+        }
+
+        .socialMedia {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        #lo {
+
+            margin-right: 5%;
+            margin-left: 5%;
+            margin-bottom: 7%;
+        }
+
+        footer {
+            width: 100%;
+            background-color: saddlebrown;
+            color: aqua;
+            text-align: center;
+            bottom: 0;
+            margin-right: 0px;
+            
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 80px rgba(92, 189, 92, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .form-group label {
+            width: 30%;
+            font-weight: bold;
+            font-size: 18px;
+            color: #4caf50;
+            display: inline-block;
+            margin-right: 30px;
+            vertical-align: top;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group select,
+        .form-group textarea {
+            width: 65%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-family: 'IM Fell English', serif;
+            font-size: 16px;
+            margin-bottom: 5px;
+
+        }
+
+        .form-group input[type="checkbox"] {
+            padding-right: 100px;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .form-group input[type="checkbox"],
+        .form-group label {
+            display: inline;
+            vertical-align: middle;
+        }
+
+
+        .submit-btn {
+            display: block;
+            width: 20%;
+            margin: 20px auto 0;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            font-family: Helvetica, sans;
+        }
+
+        .form-container {
+            width: 44%;
+            margin-top: 18%;
+            margin-bottom: 10%;
+            margin-left: 48%;
+        }
+
+        .form-container:hover {
+            border-color: #a0d468;
+
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        body {
+            font-family: 'IM Fell English', serif;
+            background-color: #f6f2e7;
+            margin: 0;
+        }
+
+        .form-group input[type="text"]:hover,
+        .form-group input[type="email"]:hover,
+        .form-group input[type="tel"]:hover,
+        .form-group select:hover,
+        .form-group textarea:hover {
+            border-color: #7ed56f;
+            border-width: 3px;
+        }
+
+        .total {
+            width: 100%;
+            background-color: #BED8A8;
+            height: 390px;
+            z-index: -1;
+            position: absolute;
+            top: 161px;
+            margin: 0px;
+        }
+
+        .valuee {
+            position: absolute;
+            top: 200px;
+            left: 100px;
+            font-size: 50px;
+        }
+
+        .tell {
+            position: absolute;
+            top: 400px;
+            left: 100px;
+            font-size: 20px;
+        }
+
+        #gg {
+            text-decoration: underline;
+        }

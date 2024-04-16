@@ -19,7 +19,7 @@ if ($result->num_rows > 0) {
     $_SESSION['user'] = $username; // Set the username in the session
 
     // Redirect to the logged-in page
-    header("Location: loggedin_user.php");
+    header("Location: ../Customer/loggedin_user.php");
     exit(); // Make sure to stop execution after redirecting
 } else {
     echo "Invalid username or password";
