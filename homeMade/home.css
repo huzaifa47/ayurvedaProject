@@ -1,0 +1,335 @@
+    body {
+        font-family: 'IM Fell English', serif;
+        background-color: hsl(120, 20%, 48%);
+        margin: 0;
+    }
+
+    header {
+        width: 100vw;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        background-image: linear-gradient(to right, rgb(198, 255, 205), rgb(255, 165, 87));
+        top: 0;
+        left: 0;
+        z-index: 4;
+    }
+
+    #nameShop {
+        margin-left: 2%;
+
+        font-size: 1.5em;
+
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    }
+
+    #nameShop:hover {
+        color: #ff0000;
+    }
+
+    nav {
+        margin-left: auto;
+        margin-right: 1%;
+
+    }
+
+    ul {
+
+        display: flex;
+        list-style: none;
+
+
+    }
+
+    ul>li {
+        margin: 0 10px;
+        font-size: 0.8em;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        padding: 7px;
+
+    }
+
+    nav>ul>li:hover {
+        background-color: coral;
+
+        cursor: pointer;
+        border-radius: 25px;
+        transform: scale(1.5, 1.5);
+        transition: transform 1s;
+    }
+
+    #big {
+        margin-top: 5%;
+        width: 100vw;
+        max-height: 800px;
+        /* display: block; */
+        opacity: 0.5;
+        z-index: 1;
+    }
+
+    .welcomeText {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        font-size: 400%;
+    }
+
+    #textInimg {
+        z-index: 2;
+        position: absolute;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+        text-align: center;
+        animation: typing 4s steps(40, end) forwards, blink-caret .75s step-end infinite;
+    }
+
+
+
+    .shops {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .shop1 {
+        margin: 5%;
+        padding: 5%;
+        border: 2px solid black;
+        border-radius: 25px;
+        background-color: beige;
+
+    }
+
+    .shop2 {
+        margin: 5%;
+        padding: 5%;
+        border: 2px solid black;
+        border-radius: 25px;
+        background-color: beige;
+
+    }
+
+    a:hover {
+        color: #ff0000;
+        transform: scale(1.1, 1.1);
+        transition: transform 1s;
+    }
+
+    .shop1:hover {
+        background-color: bisque;
+    }
+
+    .shop2:hover {
+        background-color: bisque;
+
+    }
+
+    .socialMedia {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    #lo {
+
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-bottom: 7%;
+    }
+
+    main {
+        height: 1400px;
+        width: 100%;
+    }
+
+    footer {
+        width: 100%;
+        background-color: saddlebrown;
+        color: aqua;
+        text-align: center;
+    }
+
+    .img {
+        position: absolute;
+        top: 80px;
+        width: 100%;
+        height: 170px;
+        background: url("Lovepik_com-400152628-early-summer-background.jpg");
+    }
+
+    h1 {
+        margin-left: 280px;
+        margin-right: 40px;
+        margin-top: 50px;
+    }
+
+    .container {
+        position: absolute;
+        top: 20px;
+        width: 80px;
+        height: 80px;
+        background-color: #50D5B7;
+    }
+
+    .box {
+        width: 390px;
+        height: 320px;
+        background-color: plum;
+        position: absolute;
+        left: 40px;
+        top: 280px;
+        border-radius: 25%;
+    }
+
+    .vid {
+        position: absolute;
+        top: 300px;
+        left: 60px;
+    }
+
+    iframe {
+        border-radius: 15%;
+    }
+
+    iframe:hover {
+        border: 5px dotted purple;
+        box-shadow: 20px 10px 5px purple;
+    }
+
+    .box1 {
+        width: 390px;
+        height: 320px;
+        background-color: plum;
+        position: absolute;
+        left: 450px;
+        top: 280px;
+        border-radius: 25%;
+    }
+
+    .vid1 {
+        position: absolute;
+        left: 470px;
+        top: 300px;
+    }
+
+    .box2 {
+        width: 390px;
+        height: 320px;
+        background-color: plum;
+        position: absolute;
+        left: 860px;
+        top: 280px;
+        border-radius: 25%;
+    }
+
+    .vid2 {
+        position: absolute;
+        left: 880px;
+        top: 300px;
+    }
+
+    .box3 {
+        width: 390px;
+        height: 320px;
+        background-color: plum;
+        position: absolute;
+        left: 40px;
+        top: 640px;
+        border-radius: 25%;
+
+    }
+
+    .vid3 {
+        position: absolute;
+        top: 665px;
+        left: 60px;
+    }
+
+    .box4 {
+        width: 390px;
+        height: 320px;
+        background-color: plum;
+        position: absolute;
+        left: 450px;
+        top: 640px;
+        border-radius: 25%;
+    }
+
+    .vid4 {
+        position: absolute;
+        left: 465px;
+        top: 665px;
+    }
+
+    .box5 {
+        width: 390px;
+        height: 320px;
+        background-color: plum;
+        position: absolute;
+        left: 860px;
+        top: 640px;
+        border-radius: 25%;
+    }
+
+    .vid5 {
+        position: absolute;
+        left: 875px;
+        top: 665px;
+    }
+
+    .box6 {
+        width: 390px;
+        height: 320px;
+        background-color: plum;
+        position: absolute;
+        left: 40px;
+        top: 1000px;
+        border-radius: 25%;
+
+    }
+
+
+    .vid6 {
+        position: absolute;
+        top: 1025px;
+        left: 60px;
+    }
+
+    .box7 {
+        width: 390px;
+        height: 320px;
+        background-color: plum;
+        position: absolute;
+        left: 450px;
+        top: 1000px;
+        border-radius: 25%;
+    }
+
+    .vid7 {
+        position: absolute;
+        left: 465px;
+        top: 1025px;
+    }
+
+    .box8 {
+        width: 390px;
+        height: 320px;
+        background-color: plum;
+        position: absolute;
+        left: 860px;
+        top: 1000px;
+        border-radius: 25%;
+    }
+
+    .vid8 {
+        position: absolute;
+        left: 875px;
+        top: 1025px;
+    }
