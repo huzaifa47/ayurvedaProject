@@ -1,3 +1,13 @@
+<?php
+// Include your database connection file
+include_once 'connect.php';
+
+// Query to get the count of entries in customer_info table
+$query = "SELECT COUNT(*) AS count FROM customer_info";
+$result = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($result);
+$count = $row['count'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,6 +40,14 @@
         <div id="textInimg">Welcome to the <br>World Of Ayurveda</div>
     </div>
 
+<!-- PHP code for the counter -->
+
+
+<!-- Display the counter -->
+<div align="center">
+    <h2>Successfully logged in customers:  <?php echo $count; ?><br>
+You should login too</h2>
+</div>
 
     <h1 align="center"> Our shops</h1>
     <a href="shop/kalavad.html">
