@@ -77,6 +77,7 @@ $result = $conn->query($sql);
         <nav>
             <ul>
                 <li><a href="admin_query.php">All Queries</a></li>
+                <li><a href="admin_mix.php">All Mixtures</a></li>
                 <li><a href="logout.php">Log Out</a></li>
 
 
