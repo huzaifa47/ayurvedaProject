@@ -2,39 +2,46 @@
 
 session_start();
 
-
 if (isset($_SESSION['username'])) {
     $username1 = $_SESSION['username'];
 } else {
-
     header("Location: admin_login.html");
     exit();
 }
 
-
 setcookie('session_check', 'session_active', time() + 60, '/'); // Adjust the lifetime as needed (e.g., 60 seconds)
-
 
 $username1 = $_SESSION['username'];
 
-
 include 'connect.php';
 
-
+// Insert or update product stock data
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $productname = $_POST['productname'];
-    $productLoc = $_POST['productLoc'];
-    $date = $_POST['date'];
-    $stock = $_POST['stock'];
+    if (isset($_POST['updateProductLoc'])) {
+        // Update operation
+        $productLoc = $_POST['updateProductLoc'];
+        $newStock = $_POST['newStock'];
 
+        $updateSql = "UPDATE productstock SET stock=? WHERE productLoc=?";
+        $updateStmt = $conn->prepare($updateSql);
+        $updateStmt->bind_param('ds', $newStock, $productLoc);
+        $updateStmt->execute();
+        $updateStmt->close();
+    } else {
+        // Insert operation
+        $productname = $_POST['productname'];
+        $productLoc = $_POST['productLoc'];
+        $date = $_POST['date'];
+        $stock = $_POST['stock'];
 
-    $sql = "INSERT INTO productstock (productname, productLoc, date, stock) VALUES (?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param('sssd', $productname, $productLoc, $date, $stock);
-    $stmt->execute();
+        $sql = "INSERT INTO productstock (productname, productLoc, date, stock) VALUES (?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('sssd', $productname, $productLoc, $date, $stock);
+        $stmt->execute();
 
-    // Close statement
-    $stmt->close();
+        // Close statement
+        $stmt->close();
+    }
 }
 
 // SQL query to fetch data from the productstock table
@@ -79,8 +86,6 @@ $result = $conn->query($sql);
                 <li><a href="admin_query.php">All Queries</a></li>
                 <li><a href="admin_mix.php">All Mixtures</a></li>
                 <li><a href="logout.php">Log Out</a></li>
-
-
             </ul>
         </nav>
     </header>
@@ -89,7 +94,8 @@ $result = $conn->query($sql);
     <h1>Welcome, <?php echo htmlspecialchars($username1); ?>!</h1>
 
     <!-- Insert new data form -->
-    <button onclick="showForm()">Insert New</button>
+    <button onclick="showInsertForm()">Insert New</button>
+    <button onclick="showUpdateForm()">Update</button>
     <form id="insertForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"
         style="display: none;">
         <label for="productname">Product Name:</label>
@@ -101,6 +107,15 @@ $result = $conn->query($sql);
         <label for="stock">Stock:</label>
         <input type="number" id="stock" name="stock" required><br><br>
         <input type="submit" value="Insert">
+    </form>
+
+    <form id="updateForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"
+        style="display: none;">
+        <label for="updateProductLoc">Product Location:</label>
+        <input type="text" id="updateProductLoc" name="updateProductLoc" required><br><br>
+        <label for="newStock">New Stock:</label>
+        <input type="number" id="newStock" name="newStock"><br><br>
+        <input type="submit" value="Update">
     </form>
 
     <!-- Display product stock table -->
@@ -139,8 +154,6 @@ $result = $conn->query($sql);
         <h2 align="center">Connect With Us</h2>
         <br />
         <br />
-
-
         <div class="socialMedia">
             <div id="lo">
                 <a href="https://www.facebook.com/voraabbasbhai.kaderbhai/" target="_blank"><img src="img/facebook.png"
@@ -165,9 +178,19 @@ $result = $conn->query($sql);
                 window.location.href = 'logout.php';
             }
         };
-        function showForm() {
-            var form = document.getElementById("insertForm");
-            form.style.display = "block";
+
+        function showInsertForm() {
+            var insertForm = document.getElementById("insertForm");
+            var updateForm = document.getElementById("updateForm");
+            insertForm.style.display = "block";
+            updateForm.style.display = "none";
+        }
+
+        function showUpdateForm() {
+            var insertForm = document.getElementById("insertForm");
+            var updateForm = document.getElementById("updateForm");
+            insertForm.style.display = "none";
+            updateForm.style.display = "block";
         }
     </script>
 </body>
