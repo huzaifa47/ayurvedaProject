@@ -1,8 +1,8 @@
 <?php
-// Include your database connection file
+
 include_once 'connect.php';
 
-// Query to get the count of entries in customer_info table
+
 $query = "SELECT COUNT(*) AS count FROM customer_info";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result);
@@ -18,7 +18,7 @@ $count = $row['count'];
     <link rel="icon" href="img/ak.png">
     <link rel="stylesheet" href="index1.css">
     <style>
-        /* CSS styles for the counter */
+
         #counter {
             border: 2px solid #333;
             border-radius: 200px;
@@ -29,10 +29,9 @@ $count = $row['count'];
         }
     </style>
     <script>
-        // Get the PHP row count
+     
         var count = <?php echo $count; ?>;
 
-        // Function to increment the counter every 0.2 seconds
         function incrementCounter() {
             var counterElement = document.getElementById('counter');
             var currentCount = 0;
@@ -47,7 +46,7 @@ $count = $row['count'];
             }, 130);
         }
 
-        // Call the function when the document is ready
+   
         document.addEventListener("DOMContentLoaded", function () {
             incrementCounter();
         });
@@ -61,7 +60,7 @@ $count = $row['count'];
 
         <nav>
             <ul>
-                <li><a href="login/part.html">Log In</a></li>
+                <li><a href="login/part.html">Log In/Sign Up</a></li>
                 <li><a href="admin_login.html">Admin Login</a></li>
                 <li><a href="product/product_main.html">Product</a></li>
                 <li><a href="homeMade/home.html">HomeMade Remedies</a></li>
@@ -75,7 +74,7 @@ $count = $row['count'];
         <div id="textInimg">Welcome to the <br>World Of Ayurveda</div>
     </div>
 
-    <!-- Display the counter -->
+
     <h2><div align="center" id="counter"></div></h2>
 
     <h1 align="center"> Our shops</h1>

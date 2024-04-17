@@ -15,10 +15,10 @@ $username1 = $_SESSION['username'];
 
 include 'connect.php';
 
-// Insert or update product stock data
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['updateProductLoc'])) {
-        // Update operation
+      
         $productLoc = $_POST['updateProductLoc'];
         $newStock = $_POST['newStock'];
 
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $updateStmt->execute();
         $updateStmt->close();
     } else {
-        // Insert operation
+       
         $productname = $_POST['productname'];
         $productLoc = $_POST['productLoc'];
         $date = $_POST['date'];
@@ -39,12 +39,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param('sssd', $productname, $productLoc, $date, $stock);
         $stmt->execute();
 
-        // Close statement
+ 
         $stmt->close();
     }
 }
 
-// SQL query to fetch data from the productstock table
 $sql = "SELECT * FROM productstock";
 $result = $conn->query($sql);
 ?>
@@ -118,7 +117,6 @@ $result = $conn->query($sql);
         <input type="submit" value="Update">
     </form>
 
-    <!-- Display product stock table -->
     <table>
         <thead>
             <tr>
@@ -174,7 +172,7 @@ $result = $conn->query($sql);
     <script>
         window.onload = function () {
             if (document.cookie.indexOf('session_check') === -1) {
-                // Redirect the user to the logout page if the session cookie doesn't exist
+            
                 window.location.href = 'logout.php';
             }
         };
@@ -198,6 +196,6 @@ $result = $conn->query($sql);
 </html>
 
 <?php
-// Close the database connection
+
 $conn->close();
 ?>

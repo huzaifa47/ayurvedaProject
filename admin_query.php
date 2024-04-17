@@ -18,7 +18,7 @@ include 'connect.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if form is submitted
     if (isset($_POST['srnum']) && isset($_POST['answer'])) {
-        // Sanitize inputs to prevent SQL injection
+  
         $srnum = mysqli_real_escape_string($conn, $_POST['srnum']);
         $answer = mysqli_real_escape_string($conn, $_POST['answer']);
 
