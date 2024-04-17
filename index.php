@@ -17,6 +17,41 @@ $count = $row['count'];
     <title>Abbas Bhai Kaderbhai vaid</title>
     <link rel="icon" href="img/ak.png">
     <link rel="stylesheet" href="index1.css">
+    <style>
+        /* CSS styles for the counter */
+        #counter {
+            border: 2px solid #333;
+            border-radius: 200px;
+            font-size: 25px;
+            font-weight: bold;
+            color: #333;
+            background-color: #e0ffc6;
+        }
+    </style>
+    <script>
+        // Get the PHP row count
+        var count = <?php echo $count; ?>;
+
+        // Function to increment the counter every 0.2 seconds
+        function incrementCounter() {
+            var counterElement = document.getElementById('counter');
+            var currentCount = 0;
+            counterElement.innerHTML = "Successfully logged in customers: <br><h1>" + currentCount + "+</h1><br>You should login too";
+
+            var incrementInterval = setInterval(function () {
+                currentCount++;
+                counterElement.innerHTML = "Successfully logged in customers: <br><h1>" + currentCount + "+</h1><br>You should login too";
+                if (currentCount >= count) {
+                    clearInterval(incrementInterval);
+                }
+            }, 130);
+        }
+
+        // Call the function when the document is ready
+        document.addEventListener("DOMContentLoaded", function () {
+            incrementCounter();
+        });
+    </script>
 </head>
 
 <body>
@@ -40,14 +75,8 @@ $count = $row['count'];
         <div id="textInimg">Welcome to the <br>World Of Ayurveda</div>
     </div>
 
-<!-- PHP code for the counter -->
-
-
-<!-- Display the counter -->
-<div align="center">
-    <h2>Successfully logged in customers:  <?php echo $count; ?><br>
-You should login too</h2>
-</div>
+    <!-- Display the counter -->
+    <h2><div align="center" id="counter"></div></h2>
 
     <h1 align="center"> Our shops</h1>
     <a href="shop/kalavad.html">
@@ -58,15 +87,15 @@ You should login too</h2>
                 <h3>Kalavad Road</h3>
                 <p>Opp. Crystal Mall, Shop no. 20</p>
             </div>
-    </a>
-    <a href="shop/sheth.html">
-        <div class="shop2">
-            <img src="img/sheth.png" width="100%">
-            <h3>Sheth Nagar</h3>
-            <p>Madhapar Chowk , Jamnagar Highway </p>
+        </a>
+        <a href="shop/sheth.html">
+            <div class="shop2">
+                <img src="img/sheth.png" width="100%">
+                <h3>Sheth Nagar</h3>
+                <p>Madhapar Chowk , Jamnagar Highway </p>
 
-        </div>
-    </a>
+            </div>
+        </a>
 
     </div>
     <footer>
@@ -84,6 +113,7 @@ You should login too</h2>
         &copy; 2023-2024 Abbas Bhai Kaderbhai vaid<br>
         All Rights Reserved
     </footer>
+
 </body>
 
 </html>
