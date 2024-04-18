@@ -14,6 +14,7 @@ $sql = "INSERT INTO customer_info (user, password, email, firstName) VALUES ('$u
 
 if ($conn->query($sql) === TRUE) {
     echo "Registration successful!";
+    header("Location: ..\Login\part.html");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

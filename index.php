@@ -60,8 +60,8 @@ $count = $row['count'];
 
         <nav>
             <ul>
-                <li><a href="login/part.html">Log In/Sign Up</a></li>
-                <li><a href="admin_login.html">Admin Login</a></li>
+                <li><a href="login/part.php">Log In/Sign Up</a></li>
+                <li><a href="admin_login.php">Admin Login</a></li>
                 <li><a href="product/product_main.html">Product</a></li>
                 <li><a href="homeMade/home.html">HomeMade Remedies</a></li>
             </ul>

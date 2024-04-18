@@ -16,6 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if ($enteredOTP == $storedOTP) {
         // OTP is correct
         echo "success";
+        $query = "DELETE FROM `users` WHERE email='$email'";
+        $result = mysqli_query($conn, $query);
     } else {
         // OTP is incorrect
         echo "failure";

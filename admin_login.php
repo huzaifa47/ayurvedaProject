@@ -1,3 +1,39 @@
+<?php
+// Ensure there is no whitespace or output before this PHP tag
+session_start();
+include 'connect.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Prepare and execute the SQL query
+    $sql = "SELECT * FROM admin WHERE UserName=? AND Password=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('ss', $username, $password);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    // Check if there is a match for the given username and password
+    if ($result->num_rows > 0) {
+        // Start a session and store logged-in status and username
+        $_SESSION['loggedin'] = true;
+        $_SESSION['username'] = $username;
+
+        // Redirect to loggedin.php if login is successful
+        header("Location: loggedin.php");
+        exit(); 
+    } else {
+        // Display an error message if login fails
+        echo "<script>alert('Invalid username or password');</script>";
+    }
+
+    // Close the prepared statement and database connection
+    $stmt->close();
+    $conn->close();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -157,7 +193,7 @@ button{
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form action="admin_verify.php" method="post">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <h3>Login Here</h3>
 
         <label for="username">Username</label>
@@ -187,33 +223,5 @@ button{
         &copy; 2023-2024 Abbas Bhai Kaderbhai vaid<br>
         All Rights Reserved
       </footer>
-    <!-- <script>
-        window.onload = function() {
-            var form = document.querySelector('form');
-            var email = document.querySelector('#username');
-            var password = document.querySelector('#password');
-        
-            form.addEventListener('submit', function(event) {
-                event.preventDefault();
-        
-                var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-                var passwordRegex = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
-        
-                if (!emailRegex.test(email.value)) {
-                    alert('Please enter a valid email address.');
-                    email.focus();
-                    return;
-                }
-        
-                if (!passwordRegex.test(password.value)) {
-                    alert('Password must be 6 to 16 characters and can contain alphanumeric characters and special characters !@#$%^&*');
-                    password.focus();
-                    return;
-                }
-        
-                alert('Login successful.');
-            });
-        }
-        </script> -->
 </body>
 </html>

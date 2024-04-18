@@ -9,6 +9,6 @@ $_SESSION = array();
 session_destroy();
 
 // Redirect the user to the login page after logout
-header("Location: admin_login.html");
+header("Location: admin_login.php");
 exit();
 ?>

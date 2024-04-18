@@ -53,7 +53,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-color: #f2f2f2;
         }
         button {
-
             background-color: #4CAF50;
             color: white;
             padding: 12px 20px;
@@ -61,7 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border: none;
             border-radius: 4px;
             cursor: pointer;
-           
         }
         button:hover {
             background-color: #45a049;
@@ -97,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <nav>
             <ul>
-                 <li><a href="loggedin.php">Inventory</a></li>
+                <li><a href="loggedin.php">Inventory</a></li>
                 <li><a href="admin_mix.php">All Mixtures</a></li>
                 <li><a href="logout.php">Log Out</a></li>
             </ul>
@@ -107,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div style="height: 100px; ;"></div>
     <h1>Welcome, <?php echo htmlspecialchars($username1); ?>!</h1>
     
-    <table border="1">
+    <table border="1" id="queryTable">
         <thead>
             <tr>
                 <th>Sr. Num</th>
@@ -122,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </thead>
         <tbody>
             <?php
-            $query = "SELECT * FROM querycus";
+            $query = "SELECT * FROM querycus where ans='Not Answered' ";
             $result = mysqli_query($conn, $query);
 
             if (!$result) {
@@ -146,6 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </table>
 
     <button onclick="showForm()">Add Answers</button>
+    <button onclick="addAllQueries()">Add All Queries</button>
 
     <div id="insertForm" style="display: none;">
         <h2>Add Answers</h2>
@@ -185,10 +184,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </footer>
 
     <script>
-        function showForm() {
-            var form = document.getElementById("insertForm");
-            form.style.display = "block";
-        }
-    </script>
+    function showForm() {
+        var form = document.getElementById("insertForm");
+        form.style.display = "block";
+    }
+
+    function addAllQueries() {
+        var tableBody = document.querySelector("#queryTable tbody");
+
+        // Fetch all queries via AJAX
+        fetch("getAll.php")
+            .then(response => response.text())
+            .then(data => {
+                // Append fetched queries to the table
+                tableBody.innerHTML = data;
+            })
+            .catch(error => console.error('Error:', error));
+    }
+</script>
+
 </body>
 </html>
