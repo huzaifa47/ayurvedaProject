@@ -97,6 +97,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <nav>
             <ul>
+                 <li><a href="loggedin.php">Inventory</a></li>
+                <li><a href="admin_mix.php">All Mixtures</a></li>
                 <li><a href="logout.php">Log Out</a></li>
             </ul>
         </nav>

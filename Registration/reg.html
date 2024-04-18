@@ -2,118 +2,111 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Login Page in HTML with CSS Code Example</title>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
-
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-	<link rel="stylesheet" href="./style.css">
-
+    <meta charset="UTF-8">
+    <title>Login Page in HTML with CSS Code Example</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-	<header>
-		<img src="ak.png" width="75em">
-		<h3 id="nameShop">Abbas Bhai Kaderbhai vaid</h3>
-		<nav>
-			<ul>
-				<li><a href="index.php">Home</a></li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="services.html">Services</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-		</nav>
-	</header>
-	<div class="box-form">
-		<div class="left">
-			<div class="overlay">
-				<h1>Rejuvenate with Mother Earth's Herbs</h1>
-				<p>"Unlock the natural healing power of Ayurvedic medicines for holistic health and vitality."</p>
-				<span>
-					<p>Login with social media</p>
-					<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-					<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Login with Twitter</a>
-				</span>
-			</div>
-		</div>
+    <header>
+        <img src="ak.png" width="75em">
+        <h3 id="nameShop">Abbas Bhai Kaderbhai vaid</h3>
+        <nav>
+            <ul>
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="box-form">
+        <div class="left">
+            <div class="overlay">
+                <h1>Rejuvenate with Mother Earth's Herbs</h1>
+                <p>"Unlock the natural healing power of Ayurvedic medicines for holistic health and vitality."</p>
+                <span>
+                    <p>Login with social media</p>
+                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Login with Twitter</a>
+                </span>
+            </div>
+        </div>
 
-		
-		<div class="right">
-			<h5>Registeration<br> <span id="jj">Form</span></h5>
-             
-			<div class="inputs">
-				<form action="register_user.php" method="post">
-				<input type="text" placeholder="First Name" name="firstName" required>
-				<br>
-				<input type="text" placeholder="Username" name="user"" required>
-				<br>
-				<input type="password" placeholder="password" name="password" required>
-				<br>
-				<input type="email" placeholder="abc@gmail.com" name="email" required>
-				<br>
-			</div>
-	
-			<br><br>
-			<br>
-			<button type="submit">Login</button>
-		</div>
-		</form>
+        <div class="right">
+            <h5>Registration<br> <span id="jj">Form</span></h5>
+            <div class="inputs">
+                <form id="registrationForm" action="register_user.php" method="post">
+                    <input type="text" placeholder="First Name" name="firstName" required><br>
+                    <input type="text" placeholder="Username" name="user" required><br>
+                    <input type="password" placeholder="password" name="password" required><br>
+                    <input type="email" placeholder="abc@gmail.com" name="email" id="emailInput" required><br>
+                    <input type="text" placeholder="Enter OTP" name="otp" id="otpInput" required>
+                    <button type="button" id="sendOTPButton">Send OTP</button>
+                </form>
+            </div>
 
-	</div>
-	<footer>
-		<h2 align="center">Connect With Us</h2>
-		<div class="socialMedia">
+            <br><br><br>
+            <button type="button" id="registerButton">Register</button>
+        </div>
+    </div>
 
-			<div id="lo"><a href="https://www.facebook.com/voraabbasbhai.kaderbhai/" target="_blank"><img
-						src="facebook.png" width="50px"></a></div>
-			<div id="lo"><a
-					href="https://www.justdial.com/Rajkot/Vora-M-Abbasbhai-Kadarbhai-Vaid-Opp-Crystal-Mall-Rajkot-City/0281PX281-X281-120725082405-I2E5_BZDET/"
-					target="_blank"><img src="jd.png" width="50px"></a></div>
-			<div id="lo"><a href="https://wa.me/919924337567" target="_blank"><img src="wp.jpg" width="50px"></a>
-			</div>
-		</div>
-		&copy; 2023-2024 Abbas Bhai Kaderbhai vaid<br>
-		All Rights Reserved
-	</footer>
-	<script>
-		document.getElementById('loginButton').addEventListener('click', function (event) {
-			event.preventDefault();
+    <footer>
+        <h2 align="center">Connect With Us</h2>
+        <div class="socialMedia">
+            <div id="lo"><a href="https://www.facebook.com/voraabbasbhai.kaderbhai/" target="_blank"><img src="facebook.png" width="50px"></a></div>
+            <div id="lo"><a href="https://www.justdial.com/Rajkot/Vora-M-Abbasbhai-Kadarbhai-Vaid-Opp-Crystal-Mall-Rajkot-City/0281PX281-X281-120725082405-I2E5_BZDET/" target="_blank"><img src="jd.png" width="50px"></a></div>
+            <div id="lo"><a href="https://wa.me/919924337567" target="_blank"><img src="wp.jpg" width="50px"></a></div>
+        </div>
+        &copy; 2023-2024 Abbas Bhai Kaderbhai vaid<br>
+        All Rights Reserved
+    </footer>
 
-			var firstName = document.getElementById('firstNameInput').value;
-			var lastName = document.getElementById('lastNameInput').value;
-			var password = document.getElementById('passwordInput').value;
-			var email = document.getElementById('emailInput').value;
+    <script>
+        document.getElementById('sendOTPButton').addEventListener('click', function (event) {
+            event.preventDefault();
+            var email = document.getElementById('emailInput').value;
 
-			var nameRegex = /^[a-zA-Z]+$/; // Only letters allowed for names
-			var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/; // Password with at least one digit, one lowercase, one uppercase, and 6-20 characters long
-			var emailRegex = /^\S+@\S+\.\S+$/; // Basic email pattern
+            // Send email address to server for OTP generation
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "generate_otp.php", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var otp = xhr.responseText;
+                    alert('OTP sent to ' + email + ': ' + otp);
+                }
+            };
+            xhr.send("email=" + email);
+        });
 
-			if (!firstName.match(nameRegex)) {
-				alert('First Name must contain only letters.');
-				return;
-			}
+        document.getElementById('registerButton').addEventListener('click', function (event) {
+            event.preventDefault();
+            var enteredOTP = document.getElementById('otpInput').value;
+            var email = document.getElementById('emailInput').value;
 
-			if (!lastName.match(nameRegex)) {
-				alert('Last Name must contain only letters.');
-				return;
-			}
-
-			if (!password.match(passwordRegex)) {
-				alert('Password must be between 6 to 20 characters long and contain at least one digit, one lowercase letter, and one uppercase letter.');
-				return;
-			}
-
-			if (!email.match(emailRegex)) {
-				alert('Please enter a valid email address.');
-				return;
-			}
-
-			alert('Registration successful!');
-		});
-	</script>
-
+            // Verify OTP
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "verify_otp.php?email=" + email + "&otp=" + enteredOTP, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var response = xhr.responseText;
+                    if (response.trim() == "success") {
+                        // Proceed with registration
+                        alert('Registration successful!');
+                        document.getElementById('registrationForm').submit();
+                    } else {
+                        alert('Invalid OTP. Please enter the correct OTP.');
+                    }
+                }
+            };
+            xhr.send();
+        });
+    </script>
 </body>
 
 </html>
