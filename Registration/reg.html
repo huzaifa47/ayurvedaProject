@@ -66,46 +66,90 @@
     </footer>
 
     <script>
-        document.getElementById('sendOTPButton').addEventListener('click', function (event) {
-            event.preventDefault();
-            var email = document.getElementById('emailInput').value;
+       document.getElementById('sendOTPButton').addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent default form submission
+    
+    // Check if form inputs are valid
+    if (validateForm()) {
+        var email = document.getElementById('emailInput').value;
 
-            // Send email address to server for OTP generation
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "generate_otp.php", true);
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    var otp = xhr.responseText;
-                    alert('OTP sent to ' + email + ': ' + otp);
-                    document.getElementById('otpField').style.display = 'block';
+        // Send email address to server for OTP generation
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "generate_otp.php", true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var otp = xhr.responseText;
+                alert('OTP sent to ' + email + ': ' + otp);
+                document.getElementById('otpField').style.display = 'block';
+            }
+        };
+        xhr.send("email=" + email);
+    }
+});
+
+document.getElementById('registerButton').addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent default form submission
+    
+    // Check if form inputs are valid
+    if (validateForm()) {
+        var enteredOTP = document.getElementById('otpInput').value;
+        var email = document.getElementById('emailInput').value;
+
+        // Verify OTP
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "verify_otp.php?email=" + email + "&otp=" + enteredOTP, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var response = xhr.responseText;
+                if (response.trim() == "success") {
+                    // Proceed with registration
+                    alert('Registration successful!');
+                    document.getElementById('registrationForm').submit();
+                } else {
+                    alert('Invalid OTP. Please enter the correct OTP.');
                 }
-            };
-            xhr.send("email=" + email);
-        });
+            }
+        };
+        xhr.send();
+    }
+});
 
-        document.getElementById('registerButton').addEventListener('click', function (event) {
-            event.preventDefault();
-            var enteredOTP = document.getElementById('otpInput').value;
-            var email = document.getElementById('emailInput').value;
+// Function to validate form inputs
+function validateForm() {
+    var firstName = document.getElementsByName('firstName')[0].value;
+    var username = document.getElementsByName('user')[0].value;
+    var password = document.getElementsByName('password')[0].value;
+    var email = document.getElementById('emailInput').value;
 
-            // Verify OTP
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "verify_otp.php?email=" + email + "&otp=" + enteredOTP, true);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    var response = xhr.responseText;
-                    if (response.trim() == "success") {
-                        // Proceed with registration
-                        alert('Registration successful!');
-                        document.getElementById('registrationForm').submit();
-                    } else {
-                        alert('Invalid OTP. Please enter the correct OTP.');
-                    }
-                }
-            };
-            xhr.send();
-        });
+    // Regular expressions for validation
+    var nameRegex = /^[A-Za-z]+$/;
+    var usernameRegex = /^[a-zA-Z0-9_-]+$/;
+    var passwordRegex = /^.{8,}$/;
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Check each field against its regex
+    if (!nameRegex.test(firstName)) {
+        alert("Please enter a valid first name.");
+        return false;
+    }
+    if (!usernameRegex.test(username)) {
+        alert("Please enter a valid username (alphanumeric characters, dashes, or underscores only).");
+        return false;
+    }
+    if (!passwordRegex.test(password)) {
+        alert("Please enter a valid password (at least 8 characters).");
+        return false;
+    }
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
+
+    // All inputs are valid
+    return true;
+}
+
     </script>
 </body>
 

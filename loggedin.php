@@ -75,7 +75,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" type="text/css" href="admin_login.css">
 </head>
 
-<body bgcolor="#eeff90">
+<body bgcolor="#f4f5dd">
     <header>
         <img src="img/ak.png" width="75em" />
         <h3 id="nameShop">Abbas Bhai Kaderbhai vaid</h3>
