@@ -182,9 +182,6 @@ button{
             <nav>
                 <ul>
                     <li><a href="./index.php">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="product/product_main.html">Product</a></li>
-                    <li><a href="contact.html">Contact</a></li>
                 </ul>
            </nav>
     
@@ -203,10 +200,7 @@ button{
         <input type="password" placeholder="Password" id="password" name="password">
 
         <button type="submit">Log In</button>
-        <div class="social">
-          <div class="go"><i class="fab fa-google"></i>  Google</div>
-          <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
-        </div>
+   
     </form>
     <footer>
         <br>

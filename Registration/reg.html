@@ -42,8 +42,10 @@
                     <input type="text" placeholder="Username" name="user" required><br>
                     <input type="password" placeholder="password" name="password" required><br>
                     <input type="email" placeholder="abc@gmail.com" name="email" id="emailInput" required><br>
-                    <input type="text" placeholder="Enter OTP" name="otp" id="otpInput" required>
-                    <button type="button" id="sendOTPButton">Send OTP</button>
+                    <div id="otpField" style="display: none;">
+                        <input type="text" placeholder="Enter OTP" name="otp" id="otpInput" required>
+                    </div>
+                    <button type="button" id="sendOTPButton">Get OTP</button>
                 </form>
             </div>
 
@@ -76,6 +78,7 @@
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     var otp = xhr.responseText;
                     alert('OTP sent to ' + email + ': ' + otp);
+                    document.getElementById('otpField').style.display = 'block';
                 }
             };
             xhr.send("email=" + email);

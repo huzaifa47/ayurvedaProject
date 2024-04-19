@@ -1,11 +1,10 @@
 <?php
-
 session_start();
 
 if (isset($_SESSION['username'])) {
     $username1 = $_SESSION['username'];
 } else {
-    header("Location: admin_login.html");
+    header("Location: admin_login.php");
     exit();
 }
 
@@ -56,10 +55,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-color: #4CAF50;
             color: white;
             padding: 12px 20px;
-            margin: 10px 45%;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            margin-right: 10px;
         }
         button:hover {
             background-color: #45a049;
@@ -85,6 +84,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             margin-bottom: 4px;
             resize: vertical;
         }
+        .answer-form {
+            display: none;
+        }
+        .button-container {
+    text-align: center;
+    margin-bottom: 20px; /* Add some margin below the buttons */
+}
+
     </style>
     <link rel="stylesheet" type="text/css" href="admin_login.css">
 </head>
@@ -116,6 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <th>Country</th>
                 <th>Query</th>
                 <th>Ans</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -138,28 +146,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <td><?php echo htmlspecialchars($row['country']); ?></td>
                     <td><?php echo htmlspecialchars($row['query']); ?></td>
                     <td><?php echo htmlspecialchars($row['ans']); ?></td>
+                    <td>
+                        <button onclick="showAnswerForm(<?php echo $row['srNum']; ?>)">Add Answer</button>
+                    </td>
                 </tr>
             <?php } ?>
         </tbody>
     </table>
 
-    <button onclick="showForm()">Add Answers</button>
-    <button onclick="addAllQueries()">Add All Queries</button>
-
-    <div id="insertForm" style="display: none;">
-        <h2>Add Answers</h2>
+    <div id="insertForm" class="answer-form">
+        <h2>Add Answer</h2>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group">
-                <label for="srnum">Sr. Num:</label>
-                <input type="text" id="srnum" name="srnum" required>
-            </div>
             <div class="form-group">
                 <label for="answer">Answer:</label>
                 <textarea id="answer" name="answer" rows="4" required></textarea>
             </div>
-            <button type="submit">Submit</button>
+            <input type="hidden" id="srnum" name="srnum">
+            <button type="submit">Add</button>
         </form>
     </div>
+    <div class="button-container">
+    <button onclick="addAllQueries()">Add All Queries</button>
+    <button onclick="showNonAnswered()">Show Non-Answered Queries</button>
+</div>
+
 
     <footer>
         <br />
@@ -184,9 +194,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </footer>
 
     <script>
-    function showForm() {
+    function showAnswerForm(srNum) {
         var form = document.getElementById("insertForm");
+        var srNumField = document.getElementById("srnum");
         form.style.display = "block";
+        srNumField.value = srNum;
     }
 
     function addAllQueries() {
@@ -201,7 +213,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             })
             .catch(error => console.error('Error:', error));
     }
-</script>
 
+    function showNonAnsweredQueries() {
+        var tableBody = document.querySelector("#queryTable tbody");
+
+        // Fetch only non-answered queries via AJAX
+        fetch("getNon.php")
+            .then(response => response.text())
+            .then(data => {
+                // Replace table content with non-answered queries
+                tableBody.innerHTML = data;
+            })
+            .catch(error => console.error('Error:', error));
+    }
+    </script>
 </body>
 </html>

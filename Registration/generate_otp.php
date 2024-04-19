@@ -31,9 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Port = 587;
 
         // Recipients
-        $mail->setFrom('lorem.ipsum.sample.email@gmail.com', 'Cinestudio'); // Replace with your Gmail username and desired sender name
+        $mail->setFrom('lorem.ipsum.sample.email@gmail.com', 'Ak Vaid'); // Replace with your Gmail username and desired sender name
         $mail->addAddress($email);
-        $mail->addReplyTo('lorem.ipsum.sample.email@gmail.com', 'Cinestudio'); // Replace with your Gmail username and desired sender name
+        $mail->addReplyTo('lorem.ipsum.sample.email@gmail.com', 'Ak Vaid'); // Replace with your Gmail username and desired sender name
 
         // Content
         $mail->isHTML(true);
@@ -47,12 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Store email in session
         $_SESSION['email'] = $email;
 
-        echo "
-            <script>
-            alert('Message was sent successfully. Thank you for reaching us!');
-            window.location.href = '../html/forgot2.html';
-            </script>
-        ";
+        echo " Message was sent successfully. Thank you for reaching us!";
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }

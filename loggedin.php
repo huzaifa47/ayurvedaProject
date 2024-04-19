@@ -5,7 +5,7 @@ session_start();
 if (isset($_SESSION['username'])) {
     $username1 = $_SESSION['username'];
 } else {
-    header("Location: admin_login.html");
+    header("Location: admin_login.php");
     exit();
 }
 
